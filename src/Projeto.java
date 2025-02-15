@@ -6,7 +6,7 @@ public class Projeto {
         // Variáveis
         String nome = "Charles Anderson";
         String tipoConta = "corrente";
-        String saldoInicial = "2.500,00";
+        String saldoInicial = "2500.00";
         double consultarSaldos = 0;
         double deposito = 0;
         double transferencia = 0;
@@ -14,13 +14,13 @@ public class Projeto {
         //Scanner
         Scanner opcao = new Scanner(System.in);
 
-        System.out.println("***************************************************************");
+        System.out.println("*******************************************************");
         System.out.println("Dados do cliente: \n");
 
         System.out.println("Nome: " + nome);
         System.out.println("Tipo de conta: " + tipoConta);
         System.out.println("Saldo inicial: " + saldoInicial);
-        System.out.println("***************************************************************\n");
+        System.out.println("*******************************************************\n");
 
         System.out.println("Operações: \n");
         System.out.println("1- Consultar saldo");
@@ -34,7 +34,15 @@ public class Projeto {
         if (opcaoEscolhida == 1){
             System.out.println("Saldo atualizado R$ " + saldoInicial);
         } else if (opcaoEscolhida == 2) {
-            opcao.nextDouble()
+            System.out.println("Informe o valor do depósito: ");
+            deposito = opcao.nextDouble();
+            double saldoAtualizado = deposito + Double.parseDouble(saldoInicial);
+            System.out.println("Saldo atualizado: R$ " + String.format("%.2f", saldoAtualizado));
+        } else if (opcaoEscolhida == 3) {
+            System.out.println("Informe o valor da transferência: R$ ");
+            transferencia = opcao.nextDouble();
+            double saldoAtualizado = transferencia - Double.parseDouble(saldoInicial);
+            System.out.println("Saldo atualizado: R$ " + String.format("%.2f", saldoAtualizado));
         }
 
     }
